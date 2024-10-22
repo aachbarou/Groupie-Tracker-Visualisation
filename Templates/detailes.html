@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="detailes.css">
+</head>
+<body>
+    <div class="details-container">
+        <a href="/" class="back-button">← Back to Artists</a>
+        <h1>Locations :</h1>
+        {{range .L_ocations.Locations}}
+            <ul>
+                <li>{{.}}</li>
+                    </ul>
+        {{end}}
+    <h1>Dates :</h1>
+        {{range .D_ates.Dates}}
+        <ul>
+            <li>{{.}}</li>
+                </ul>
+    {{end}}
+    
+    <h1>Relations:</h1>
+    <ul>
+    {{range $Key, $value := .R_elation.DatesLocation}}
+        <li>
+            <h5>{{$Key}}</h5>
+            <ul>
+                {{range $value}}
+                    <li>{{.}}</li>
+                {{end}}
+            </ul>
+        </li>
+    {{end}}
+    </ul>
+    </div>
+</body>
+</html>

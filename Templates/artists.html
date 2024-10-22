@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artists</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <h1 class="title">Groupie Tracker</h1>
+
+    <body>
+        <div class="serach_bar">
+            <form action="/search" method="get">
+                <span class="Search_Title">Search :</span>
+                <input type="text" list="text" name="search">
+                <datalist id="text">
+                    {{range .Artists}}
+                    <option value="{{.Name}}">Name artistes</option>
+                    {{range .Members}}
+                    <option value="{{.}}">name band</option>
+                    {{end}}
+                    <option value="{{.CreationDate}}">Creation Date</option>
+                    <option value="{{.FirstAlbum}}">First Album</option>
+                    {{end}}
+                    {{range .Dates}}
+                    {{range .Dates}}
+                    <option value="{{.}}">date</option>
+                    {{end}}
+                    {{end}}
+                    {{range .Locations}}
+                    {{range .Locations}}
+                    <option value="{{.}}">name Location</option>
+                    {{end}}
+                    {{end}}
+                </datalist>
+                <button type="submit">submit</button>
+            </form>
+        </div>
+        <br>
+        <div class="filter">
+            
+            <form action="/filter" method="get">
+                <span>Filtre With Location  :</span>
+                <input type="text" list="Locations" name="queryfilter">
+                <datalist id="Locations">
+                    {{range .Locations}}
+                    {{range .Locations}}
+                    <option value="{{.}}">name Location</option>
+                    {{end}}
+                    {{end}}
+                </datalist>
+                <div class="range">
+                    <div class="Crdat">
+                        <span>Career starting years : </span><input type="range" id="yearRange" name="yearstart" min="1950" max="2024" value="1950" oninput="document.getElementById('yearValue').textContent = this.value">
+                        <span id="yearValue">1950</span>
+                        <span>Career Ending years : </span><input type="range" id="yearRange" name="yearend" min="1950" max="2024" value="2024" oninput="document.getElementById('yearend').textContent = this.value">
+                        <span id="yearend">2024</span>
+                    </div>
+                    <div class="Fralbum">
+                        <span>First album start: </span>
+                        <input type="range" id="yearStartRange" name="FralbumStart" min="1950" max="2024" value="1950" oninput="document.getElementById('yearStartValue').textContent = this.value">
+                        <span id="yearStartValue">1950</span>
+                        <span>First album end: </span>
+                        <input type="range" id="yearEndRange" name="FralbumEnd" min="1950" max="2024" value="2024" oninput="document.getElementById('yearEndValue').textContent = this.value">
+                        <span id="yearEndValue">2024</span>
+                    </div>
+                </div>
+                <br>
+                <div class="checkbox-container">
+                    <label>Select Numbers (1 to 8):</label><br>
+                    <input type="checkbox" id="num1" name="number" value="1">
+                    <label for="num1">1</label>
+                    
+                    <input type="checkbox" id="num2" name="number" value="2">
+                    <label for="num2">2</label>
+                    
+                    <input type="checkbox" id="num3" name="number" value="3">
+                    <label for="num3">3</label>
+                    
+                    <input type="checkbox" id="num4" name="number" value="4">
+                    <label for="num4">4</label>
+                    
+                    <input type="checkbox" id="num5" name="number" value="5">
+                    <label for="num5">5</label>
+                    
+                    <input type="checkbox" id="num6" name="number" value="6">
+                    <label for="num6">6</label>
+                    
+                    <input type="checkbox" id="num7" name="number" value="7">
+                    <label for="num7">7</label>
+                    
+                    <input type="checkbox" id="num8" name="number" value="8">
+                    <label for="num8">8</label>
+                    
+                    <button type="submit">submit</button>
+                </div>
+                
+        </div>
+        <section id="artists">
+
+            {{range .Founded}}
+            <div class="artist-card">
+                <a href="/detailes?id={{.ID}}"><img src="{{.Image}}" alt="Name"></a>
+                <div class="info">
+                    <h3>{{.Name}}</h3>
+                    <h2>Started in : </h2>
+                    <pre>{{.CreationDate}}</pre>
+                    <p>First Album: {{.FirstAlbum}}</p>
+                    <h2>Members</h2>
+                    {{range .Members}}
+                    <ul>
+                        <li>{{.}}</li>
+                    </ul>
+                    {{end}}
+                </div>
+            </div>
+            {{end}}
+        </section>
+    </body>
+
+</body>
+
+</html>

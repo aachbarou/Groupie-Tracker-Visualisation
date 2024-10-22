@@ -1,0 +1,112 @@
+/* Base styles - Keep same background as main page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 80px 20px 20px;
+    color: #333;
+    background-image: url("https://img.freepik.com/free-vector/wave-gradient-background-luxury-dark-modern-design_343694-3088.jpg?t=st=1729590401~exp=1729594001~hmac=55f1631420efb9f1dfbb1db8e90aa2ca5d420d06b8b5e8bf03da407cd94790bd&w=1380");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Main container for better organization */
+.details-container {
+    animation: fadeIn 0.5s ease-in;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(70, 78, 184, 0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Section headings */
+h1 {
+    color: #464eb8;
+    border-bottom: 3px solid #464eb8;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    background-color: #f8f9ff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e3ff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 8px rgba(70, 78, 184, 0.1);
+}
+
+/* Relations section specific styling */
+h5 {
+    color: #23297a;
+    font-size: 1.2em;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e0e3ff;
+    border-radius: 6px;
+}
+
+/* Nested lists in Relations */
+li ul {
+    margin-left: 20px;
+}
+
+li ul li {
+    background-color: #ffffff;
+    border: 1px solid #e0e3ff;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+/* Back button */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #464eb8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #23297a;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .details-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    li {
+        padding: 10px;
+    }
+}

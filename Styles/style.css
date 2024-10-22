@@ -1,0 +1,239 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url("https://img.freepik.com/free-vector/wave-gradient-background-luxury-dark-modern-design_343694-3088.jpg?t=st=1729590401~exp=1729594001~hmac=55f1631420efb9f1dfbb1db8e90aa2ca5d420d06b8b5e8bf03da407cd94790bd&w=1380");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Hadi hiya li ghadi t5ali background fixed */
+    min-height: 100vh; /* Bach tbqa background 3la toul lpage */
+    background-position: center; /* Bach tcentri background */
+}
+
+header {
+    background-color: #23297a;
+    padding: 10px 0;
+    text-align: center;
+      position: fixed; /* Fixed position */
+    top: 0; /* Stick to top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Bach iji fo9 ga3 elements */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+h1.title {
+    color: #ffffff;
+    background-color: #464eb8;
+    padding: 20px;
+    margin: 0;
+}
+.Search_Title{
+    color: #2b2e56;
+    text-decoration: solid;
+}
+/* Search Bar Styles */
+.serach_bar {
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.serach_bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #464eb8;
+    border-radius: 5px;
+}
+
+.serach_bar button , .filter button {
+    padding: 10px 20px;
+    background-color: #464eb8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.serach_bar button:hover , .filter button:hover {
+    background-color: #23297a;
+}
+
+/* Filter Section Styling */
+.filter {
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 60%;
+    border: 2px solid #464eb8;
+    box-shadow: 0 4px 15px rgba(70, 78, 184, 0.1);
+}
+
+/* Location Filter */
+.filter input[type="text"] {
+    padding: 12px;
+    border: 2px solid #464eb8;
+    border-radius: 6px;
+    width: 50%;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Range Container */
+.range {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+/* Individual Range Sections */
+.Crdat, .Fralbum {
+    flex: 1;
+    background-color: #f8f9ff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e3ff;
+}
+
+/* Range Input Styling */
+input[type="range"] {
+    width: 90%;
+    margin: 10px 0;
+    height: 5px;
+    background: #464eb8;
+    border-radius: 5px;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #464eb8;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #23297a;
+}
+
+/* Span Labels */
+.Crdat span, .Fralbum span {
+    display: block;
+    margin-bottom: 5px;
+    color: #464eb8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Checkbox Container */
+.checkbox-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9ff;
+    border-radius: 8px;
+    border: 1px solid #e0e3ff;
+}
+
+/* Submit Button */
+.filter button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    .filter {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .range {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filter input[type="text"] {
+        width: 100%;
+    }
+}
+/* Artist Card Section */
+#artists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.artist-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.artist-card .info {
+    padding: 15px;
+}
+
+.artist-card h3 {
+    color: #464eb8;
+    font-size: 1.5em;
+}
+
+.artist-card h2 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.artist-card pre, .artist-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.artist-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.artist-card ul li {
+    font-size: 1em;
+    color: #464eb8;
+}
+
+@media screen and (max-width: 768px) {
+    .serach_bar, .filter {
+        width: 90%;
+    }
+
+    #artists {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .artist-card {
+        width: 90%;
+    }
+}
+.artist-card:hover {
+    transform: scale(1.1); /* Enlarge the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
+}
