@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>artists</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="/Styles/style.css">
 </head>
 
 <body>
@@ -13,8 +13,6 @@
 
     </header>
     <h1 class="title">Groupie Tracker</h1>
-
-    <body>
         <div class="serach_bar">
             <form action="/search" method="get">
                 <span class="Search_Title">Search :</span>
@@ -39,7 +37,7 @@
                     {{end}}
                     {{end}}
                 </datalist>
-                <button type="submit">submit</button>
+                <button type="submit">Search</button>
             </form>
         </div>
         <br>
@@ -71,6 +69,7 @@
                         <span id="yearEndValue">2024</span>
                     </div>
                 </div>
+               
                 <br>
                 <div class="checkbox-container">
                     <label>Select Numbers (1 to 8):</label><br>
@@ -98,7 +97,7 @@
                     <input type="checkbox" id="num8" name="number" value="8">
                     <label for="num8">8</label>
                     
-                    <button type="submit">submit</button>
+                    <button type="submit">Filter</button>
                 </div>
                 
         </div>
@@ -122,8 +121,7 @@
             </div>
             {{end}}
         </section>
-    </body>
-
+        <script src="/Scripts/script.js"></script>
 </body>
 
 </html>

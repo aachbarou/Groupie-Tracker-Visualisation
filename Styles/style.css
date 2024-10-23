@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-image: url("https://img.freepik.com/free-vector/wave-gradient-background-luxury-dark-modern-design_343694-3088.jpg?t=st=1729590401~exp=1729594001~hmac=55f1631420efb9f1dfbb1db8e90aa2ca5d420d06b8b5e8bf03da407cd94790bd&w=1380");
+    background-image:url(Background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed; /* Hadi hiya li ghadi t5ali background fixed */
@@ -30,7 +30,7 @@ h1.title {
     margin: 0;
 }
 .Search_Title{
-    color: #2b2e56;
+    color: #ffffff;
     text-decoration: solid;
 }
 /* Search Bar Styles */
