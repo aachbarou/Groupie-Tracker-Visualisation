@@ -1,7 +1,6 @@
 package Handler
 
 import (
-	"fmt"
 	"net/http"
 )
 
@@ -19,7 +18,6 @@ func CheckParseFile(w http.ResponseWriter, r *http.Request, err1 error, err2 err
 		return false
 	}
 	if err1 != nil || err3 != nil {
-		fmt.Println("vsfvsfv", err1)
 		Error_handle(w, 500)
 		return false
 	}

@@ -21,9 +21,13 @@ func Handle_SearchBar(w http.ResponseWriter, r *http.Request) {
 	defer func() {
 		panic := recover()
 		if panic != nil {
-			Error_handle(w, 416)
+			Error_handle(w, 500)
 		}
 	}()
+	Parssing := CheckParseFile(w, r, errT, errE, errD)
+	if !Parssing {
+		return
+	}
 	if r.Method == "GET" {
 		query := r.FormValue("search")
 		Searched := SearchArtists(query)
@@ -103,9 +107,13 @@ func Handle_Filters(w http.ResponseWriter, r *http.Request) {
 	defer func() {
 		panic := recover()
 		if panic != nil {
-			Error_handle(w, 416)
+			Error_handle(w, 500)
 		}
 	}()
+	Parssing := CheckParseFile(w, r, errT, errE, errD)
+	if !Parssing {
+		return
+	}
 	if r.Method == "GET" {
 		r.ParseForm()
 		if len(r.Form) == 0 {
@@ -150,4 +158,18 @@ func Handle_Filters(w http.ResponseWriter, r *http.Request) {
 		Error_handle(w, 400)
 		return
 	}
+}
+func  HandleFiles(w http.ResponseWriter, r *http.Request){
+	if   r.URL.Path == "/Styles/" {
+		Error_handle(w , 404)
+		return
+	}
+	http.ServeFile(w,r,"Styles/"+r.URL.Path[7:])
+}
+func  HandleScripts(w http.ResponseWriter, r *http.Request){
+	if   r.URL.Path == "/Scripts/" {
+		Error_handle(w , 404)
+		return
+	}
+	http.ServeFile(w,r,"Scripts/"+r.URL.Path[7:])
 }

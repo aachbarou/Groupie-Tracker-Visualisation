@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 80px 20px 20px;
     color: #333;
-    background-image: url("https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-56228.jpg?t=st=1729607043~exp=1729610643~hmac=aa26bb04e9cc64e7e51f58eaf5042a74c55609a5548b15c65b8caa9e8243e94f&w=1380");
+    background-image: url(Background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -19,7 +19,6 @@ body {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 15px rgba(70, 78, 184, 0.1);
 }
 
 @keyframes fadeIn {

@@ -107,7 +107,6 @@ input[type="range"] {
     height: 5px;
     background: #464eb8;
     border-radius: 5px;
-    -webkit-appearance: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -221,7 +220,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 @media screen and (max-width: 768px) {
     .serach_bar, .filter {
-        width: 90%;
+        width: 80%;
     }
 
     #artists {
